@@ -1,21 +1,23 @@
 import React from 'react';
-
+ 
 class ClickityClick extends React.Component {
   constructor() {
     super();
-
+ 
     // Define the initial state:
     this.state = {
       hasBeenClicked: false
     };
   }
-
+ 
   handleClick = () => {
-    this.setState({
-      hasBeenClicked: true
+    this.setState(previousState => {
+      return {
+        count: previousState.count + 1
+      }
     })
   };
-
+ 
   render() {
     return (
       <div>
@@ -25,5 +27,5 @@ class ClickityClick extends React.Component {
     );
   }
 }
-
+ 
 export default ClickityClick;
